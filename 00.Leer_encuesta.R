@@ -5,7 +5,7 @@
 #' mode: standalone # {selfcontained,standalone, draft}
 #' output:
 #'  html_document:
-#'    theme: cerulean
+#'    theme: united
 #'    css: ./img/base.css
 #' ---
 

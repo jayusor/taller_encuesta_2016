@@ -12,14 +12,6 @@
     text-align: right;
     float: right;
     color: #8f1b27;
-    font-family: Helvetica, Arial, sans-serif;
-}
-
-
-
-h1, h2, h3, h4{
-  font-family: Helvetica, Arial, sans-serif;
-  color: #000;
 }
 
 h1{
@@ -30,21 +22,6 @@ h1{
  h2, h3, h4{
      font-size: 1.5em;
 }
-
- p, body{
-  font-family: Helvetica, Arial, sans-serif;
-  color: #000;
-}
-
-
-.logo_telefonica .tit h1 small {
-    float: right;
-    text-transform: none;
-    font-size: 55%;
-    color: #000;
-    transition: all 0.5s ease 0s;
-}
-
 
 .logo{
   width: 25%;
