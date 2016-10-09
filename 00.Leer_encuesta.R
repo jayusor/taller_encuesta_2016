@@ -1,7 +1,7 @@
 #' ---
 #' title: "Lectura Encuesta"
 #' author: Lenguajes para el Análisis de Datos
-#' date: "`r format(Sys.time(), '%d de %B, %Y')`"
+#' date: "Noviembre 2016"
 #' mode: standalone # {selfcontained,standalone, draft}
 #' output:
 #'  html_document:
