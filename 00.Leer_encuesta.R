@@ -39,4 +39,5 @@ wb %>% gs_browse()
 meta <- wb %>% gs_read()
 class(meta)
 
+#' Empieza mi parte
 meta
