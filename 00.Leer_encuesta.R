@@ -55,20 +55,21 @@ str(meta)
 #' Inventarnos unos cuantos registros de prueba
 #' 200 registros con nombre Maria y 200 registros con nombre Antonio
 #+ eval=FALSE
+size=50
 data.frame(
 date=Sys.time() %>% as.character,
-estado=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-biblioteca=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-accesibilidad_parking=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-comidas=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-inst_aulas=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-inst_deporte=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-accesibilidad_profes=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-seguridad=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)), 
-extraescolares=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-residencias=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-satisfaccion=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-recomendacion=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+estado=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+biblioteca=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+accesibilidad_parking=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+comidas=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+inst_aulas=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+inst_deporte=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+accesibilidad_profes=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+seguridad=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)), 
+extraescolares=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+residencias=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+satisfaccion=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+recomendacion=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
 nombre="Patricia",
 domicilio="Calle Mayor, Madrid",
 email="aschinchon@gmail.com"
@@ -76,18 +77,18 @@ email="aschinchon@gmail.com"
 
 data.frame(
   date=Sys.time() %>% as.character,
-  estado=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  biblioteca=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  accesibilidad_parking=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  comidas=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  inst_aulas=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  inst_deporte=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  accesibilidad_profes=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  seguridad=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)), 
-  extraescolares=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  residencias=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  satisfaccion=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  recomendacion=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  estado=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  biblioteca=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  accesibilidad_parking=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  comidas=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  inst_aulas=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  inst_deporte=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  accesibilidad_profes=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  seguridad=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)), 
+  extraescolares=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  residencias=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  satisfaccion=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  recomendacion=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
   nombre="Antonio",
   domicilio="Calle Mayor, Madrid",
   email="aschinchon@gmail.com"
@@ -105,17 +106,29 @@ hist(meta$comidas, main = "Valoracion de las comidas")
 
 #' ## Creamos algunas variables nuevas
 #' Promotor/Detractor
-meta %>% mutate(nps=ifelse(recomendacion<3, "Detractor", ifelse(recomendacion>7, "Promotor", "Neutro")))
+meta %>% mutate(nps=ifelse(recomendacion<3, "Detractor", ifelse(recomendacion>7, "Promotor", "Neutro")))-> meta
 
 #' Genero (M/F)
 library(genderizeR)
-findGivenNames(meta$nombre) -> sexo
+unique(meta$nombre) %>% findGivenNames(textPrepare = FALSE) -> sexo
 
+#' Incorporamos la variable gender 
 meta %>% left_join(sexo, by=c("nombre"="name")) -> meta
+
+#' Media agrupada de una variable
+meta %>% group_by(gender) %>% summarize(puntuacion_comidas=mean(extraescolares))
 
 #' Geolocalizacion
 library(ggmap)
-meta %>% 
-  select(domicilio) %>% 
-  lapply(geocode)->loc
+lapply(as.character(meta$domicilio), geocode)->loc
+
+as.data.frame(loc)
 meta %>% cbind(loc)->meta
+
+
+#' ## Algunos graficos interactivos (Leaflet, highcharter, googlevis)
+#' 
+
+
+#' ## Un arbol
+#' 
