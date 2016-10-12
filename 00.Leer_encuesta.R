@@ -52,6 +52,48 @@ colnames(meta)<-c("date", "estado", "biblioteca", "accesibilidad_parking", "comi
                   "nombre", "domicilio", "email")
 str(meta)
 
+#' Inventarnos unos cuantos registros de prueba
+#' 200 registros con nombre Maria y 200 registros con nombre Antonio
+#+ eval=FALSE
+data.frame(
+date=Sys.time() %>% as.character,
+estado=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+biblioteca=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+accesibilidad_parking=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+comidas=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+inst_aulas=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+inst_deporte=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+accesibilidad_profes=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+seguridad=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)), 
+extraescolares=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+residencias=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+satisfaccion=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+recomendacion=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+nombre="Patricia",
+domicilio="Calle Mayor, Madrid",
+email="aschinchon@gmail.com"
+) %>% rbind(meta) -> meta
+
+data.frame(
+  date=Sys.time() %>% as.character,
+  estado=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  biblioteca=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  accesibilidad_parking=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  comidas=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  inst_aulas=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  inst_deporte=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  accesibilidad_profes=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  seguridad=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)), 
+  extraescolares=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  residencias=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  satisfaccion=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  recomendacion=sample(x=0:10, size=500, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  nombre="Antonio",
+  domicilio="Calle Mayor, Madrid",
+  email="aschinchon@gmail.com"
+) %>% rbind(meta) -> meta
+
+
 #' Seleccionar los que dicen que el estado del campus es 3 o menos
 meta %>% filter(estado<=3)
 
@@ -59,13 +101,7 @@ meta %>% filter(estado<=3)
 summary(meta)
 
 #' Histograma de una respuesta
-hist(meta$comidas, breaks=0:10, main = "Valoracion de las comidas")
-
-#' x-y plot
-plot(x = meta$inst_deporte, 
-     y = meta$inst_aulas, 
-     type = 'p', 
-     main = "Valoracion de las instalaciones")
+hist(meta$comidas, main = "Valoracion de las comidas")
 
 #' ## Creamos algunas variables nuevas
 #' Promotor/Detractor
@@ -73,9 +109,8 @@ meta %>% mutate(nps=ifelse(recomendacion<3, "Detractor", ifelse(recomendacion>7,
 
 #' Genero (M/F)
 library(genderizeR)
-meta %>% 
-  select(nombre) %>% 
-  findGivenNames() -> sexo
+findGivenNames(meta$nombre) -> sexo
+
 meta %>% left_join(sexo, by=c("nombre"="name")) -> meta
 
 #' Geolocalizacion
