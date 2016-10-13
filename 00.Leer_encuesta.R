@@ -46,49 +46,51 @@ str(meta)
 
 #' Renombrar campos para facilitar manejo
 colnames(meta) 
-colnames(meta)<-c("date", "estado", "biblioteca", "accesibilidad_parking", "comidas", 
-                  "inst_aulas", "inst_deporte", "accesibilidad_profes", "seguridad", 
-                  "extraescolares", "residencias", "satisfaccion", "recomendacion",
+colnames(meta)<-c("date", 
+                  "estad", "bibli", "parki", "comid", 
+                  "aulas", "depor", "profe", "segur", 
+                  "extra", "resid", "satis", "recom",
                   "nombre", "domicilio", "email")
 str(meta)
+
 
 #' Inventarnos unos cuantos registros de prueba
 #' 200 registros con nombre Maria y 200 registros con nombre Antonio
 #+ eval=FALSE
-size=50
+size=20
 data.frame(
-date=Sys.time() %>% as.character,
-estado=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-biblioteca=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-accesibilidad_parking=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-comidas=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-inst_aulas=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-inst_deporte=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-accesibilidad_profes=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-seguridad=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)), 
-extraescolares=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-residencias=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-satisfaccion=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-recomendacion=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-nombre="Patricia",
-domicilio="Calle Mayor, Madrid",
-email="aschinchon@gmail.com"
+  date=Sys.time() %>% as.character,
+  estad=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  bibli=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  parki=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  comid=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  aulas=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  depor=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  profe=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  segur=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  extra=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  resid=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  satis=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  recom=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  nombre="Patricia",
+  domicilio="Calle Mayor, Madrid",
+  email="aschinchon@gmail.com"
 ) %>% rbind(meta) -> meta
 
 data.frame(
   date=Sys.time() %>% as.character,
-  estado=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  biblioteca=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  accesibilidad_parking=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  comidas=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  inst_aulas=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  inst_deporte=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  accesibilidad_profes=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  seguridad=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)), 
-  extraescolares=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  residencias=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  satisfaccion=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  recomendacion=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  estad=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  bibli=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  parki=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  comid=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  aulas=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  depor=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  profe=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  segur=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  extra=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  resid=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  satis=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  recom=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
   nombre="Antonio",
   domicilio="Calle Mayor, Madrid",
   email="aschinchon@gmail.com"
@@ -96,21 +98,23 @@ data.frame(
 
 
 #' Seleccionar los que dicen que el estado del campus es 3 o menos
-meta %>% filter(estado<=3)
+meta %>% filter(estad<=3)
 
 #' Summary del dataset
 summary(meta)
 
 #' Histograma de una respuesta
-hist(meta$comidas, main = "Valoracion de las comidas")
+hist(meta$comid, main = "Valoracion de las comidas")
 
 #' ## Creamos algunas variables nuevas
 #' Promotor/Detractor
-meta %>% mutate(nps=ifelse(recomendacion<3, "Detractor", ifelse(recomendacion>7, "Promotor", "Neutro")))-> meta
+meta %>% 
+  mutate(nps=ifelse(recom<3, "Detractor", ifelse(recom>7, "Promotor", "Neutro")))-> meta
 
 #' Genero (M/F)
 library(genderizeR)
-unique(meta$nombre) %>% findGivenNames(textPrepare = FALSE) -> sexo
+unique(meta$nombre) %>% 
+  findGivenNames(textPrepare = FALSE) -> sexo
 
 #' Incorporamos la variable gender 
 meta %>% left_join(sexo, by=c("nombre"="name")) -> meta
@@ -120,15 +124,73 @@ meta %>% group_by(gender) %>% summarize(puntuacion_comidas=mean(extraescolares))
 
 #' Geolocalizacion
 library(ggmap)
-lapply(as.character(meta$domicilio), geocode)->loc
-
-as.data.frame(loc)
-meta %>% cbind(loc)->meta
-
+meta %>% 
+  select(domicilio) %>% 
+  lapply(function(x){geocode(as.character(x), output="latlon")})  %>% 
+  as.data.frame %>% 
+  cbind(meta) -> meta
 
 #' ## Algunos graficos interactivos (Leaflet, highcharter, googlevis)
-#' 
+#' Mapa con la localizacion de los encuestados
+library(leaflet)
+leaflet(meta) %>%
+  addTiles() %>%
+  addCircleMarkers(lng = ~domicilio.lon, 
+                   lat = ~domicilio.lat, 
+                   radius = 5, 
+                   color = "red",
+                   stroke=FALSE,
+                   fillOpacity = 0.8)->mapa
+
+#' Highchart
+library(highcharter)
+meta %>% group_by(gender) %>% 
+  summarize(estad=mean(estad),
+            bibli=mean(bibli),
+            parki=mean(parki), 
+            comid=mean(comid), 
+            aulas=mean(aulas), 
+            depor=mean(depor), 
+            profe=mean(profe), 
+            segur=mean(segur), 
+            extra=mean(extra), 
+            resid=mean(resid), 
+            satis=mean(satis), 
+            recom=mean(recom))->medias
+
+medias %>% 
+  filter(gender=="female") %>% 
+  select(-gender) %>% 
+  as.numeric->chicas
+
+medias %>% 
+  filter(gender=="male") %>% 
+  select(-gender) %>% 
+  as.numeric->chicos
 
 
-#' ## Un arbol
-#' 
+highchart() %>% 
+  hc_chart(polar = TRUE, type = "line") %>% 
+  hc_title(text = "Valoraciones según sexo") %>% 
+  hc_xAxis(categories = c("estad", "bibli", "parki", "comid", 
+                          "aulas", "depor", "profe", "segur", 
+                          "extra", "resid", "satis", "recom"),
+           tickmarkPlacement = 'on',
+           lineWidth = 0) %>% 
+  hc_yAxis(gridLineInterpolation = 'polygon',
+           lineWidth = 0,
+           min = 0) %>% 
+  hc_series(
+    list(
+      name = "Chicos",
+      data = chicos,
+      pointPlacement = 'on'
+    ),
+    list(
+      name = "Chicas",
+      data = chicas,
+      pointPlacement = 'on'
+    )
+  )->spider
+
+ 
