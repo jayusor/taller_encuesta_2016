@@ -120,7 +120,7 @@ unique(meta$nombre) %>%
 meta %>% left_join(sexo, by=c("nombre"="name")) -> meta
 
 #' Media agrupada de una variable
-meta %>% group_by(gender) %>% summarize(puntuacion_comidas=mean(extraescolares))
+meta %>% group_by(gender) %>% summarize(puntuacion_comidas=mean(extra))
 
 #' Geolocalizacion
 library(ggmap)
@@ -193,4 +193,11 @@ highchart() %>%
     )
   )->spider
 
- 
+#' ## arbol de decision para separar promotores de detractores 
+library(party)
+meta %>% 
+  filter(nps %in% c("Detractor", "Promotor")) %>%
+  mutate(nps=ifelse(nps=="Promotor", 1, 0)) %>% 
+  ctree(nps~estad+bibli+parki+comid+aulas+depor+profe+
+            segur+extra+resid+satis, data=.)->tree
+plot(tree, main="Classification Tree Promotores/Detractores")
