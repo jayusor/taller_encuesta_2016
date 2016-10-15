@@ -1,0 +1,77 @@
+---
+title: "Dashboard: Encuesta Europea"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+    theme: simplex
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(leaflet)
+library(highcharter)
+library(rattle)
+
+resultados <- new.env()
+load("resultados.Rdata",envir = resultados)
+resultados %>% ls
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+    
+### Número de mujeres
+```{r}
+generos <- resultados$meta$gender %>% table %>% as.data.frame()
+valueBox(generos$Freq[generos[[1]] == "female"],
+         icon = "fa-female",
+         color = "info"
+         )
+```
+
+
+### Número de hombres
+```{r}
+valueBox(generos$Freq[generos[[1]] == "male"],
+         icon = "fa-male",
+         color = "success"
+         )
+```
+
+### Spam per Day
+
+```{r}
+spam <- sample(c(8,12),1)
+valueBox(spam, 
+         icon = "fa-trash",
+         color = ifelse(spam > 10, "warning", "primary"))
+```    
+    
+    
+Row
+-----------------------------------------------------------------------
+
+### Resultados árbol
+```{r}
+plot(resultados$tree)
+```
+
+### Valoraciones según sexo
+```{r}
+resultados$spider %>% hc_title(text = "")
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+### Mapa
+
+```{r}
+resultados$mapa
+```
+
