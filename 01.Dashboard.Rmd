@@ -34,7 +34,7 @@ valueBox(nps["Detractor"],
          )
 ```
 
-### Promotores
+### Neutros
 ```{r}
 valueBox(nps["Neutro"],
          icon = "fa-unlock",
