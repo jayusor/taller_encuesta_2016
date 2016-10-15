@@ -15,10 +15,18 @@
 #' Vamos a proceder a leer los resultados de la encuesta de Google Forms
 #' 
 
-
+#+include=FALSE
 rm(list = ls());gc()
 
+pkgs = c("tidyverse","googlesheets","genderizeR","ggmap",
+         "leaflet","highcharter","party","rattle")
+
+if (!all(pkgs %in% installed.packages()))
+  install.packages(pkgs[!pkgs %in% installed.packages()])
+
 library(tidyverse)
+knitr::opts_chunk$set(cache = TRUE)
+
 library(googlesheets)
 
 #' Buscar por hojas que contengan "Europea"
@@ -142,6 +150,8 @@ leaflet(meta) %>%
                    stroke=FALSE,
                    fillOpacity = 0.8)->mapa
 
+mapa
+
 #' Highchart
 library(highcharter)
 meta %>% group_by(gender) %>% 
@@ -193,6 +203,8 @@ highchart() %>%
     )
   )->spider
 
+spider
+
 #' ## arbol de decision para separar promotores de detractores 
 library(party)
 meta %>% 
@@ -201,3 +213,6 @@ meta %>%
   ctree(nps~estad+bibli+parki+comid+aulas+depor+profe+
             segur+extra+resid+satis, data=.)->tree
 plot(tree, main="Classification Tree Promotores/Detractores")
+
+save.image("resultados.Rdata")
+
