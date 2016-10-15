@@ -206,11 +206,11 @@ highchart() %>%
 spider
 
 #' ## arbol de decision para separar promotores de detractores 
-library(party)
+library(rpart)
 meta %>% 
   filter(nps %in% c("Detractor", "Promotor")) %>%
   mutate(nps=ifelse(nps=="Promotor", 1, 0)) %>% 
-  ctree(nps~estad+bibli+parki+comid+aulas+depor+profe+
+  rpart(nps~estad+bibli+parki+comid+aulas+depor+profe+
             segur+extra+resid+satis, data=.)->tree
 plot(tree, main="Classification Tree Promotores/Detractores")
 
