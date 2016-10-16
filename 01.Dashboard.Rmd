@@ -13,6 +13,7 @@ library(tidyverse)
 library(leaflet)
 library(highcharter)
 library(rattle)
+library(rpart.plot)
 
 resultados <- new.env()
 load("resultados.Rdata",envir = resultados)
