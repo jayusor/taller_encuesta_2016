@@ -65,42 +65,43 @@ str(meta)
 #' Inventarnos unos cuantos registros de prueba
 #' 200 registros con nombre Maria y 200 registros con nombre Antonio
 #+ eval=FALSE
-size=20
+calles=c("Bravo Murillo", "Alcala", "Lopez de Hoyos", "Hacienda de Pavones", "Gomeznarro", "Principe de Vergara")
+size=40
 data.frame(
   date=Sys.time() %>% as.character,
-  estad=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  bibli=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  parki=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  comid=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  aulas=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  depor=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  profe=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  segur=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  extra=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  resid=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  satis=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
-  recom=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=10, length.out = 11)),
+  estad=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
+  bibli=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
+  parki=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
+  comid=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
+  aulas=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
+  depor=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
+  profe=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
+  segur=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
+  extra=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
+  resid=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
+  satis=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
+  recom=sample(x=0:10, size, replace=TRUE, prob=seq(from=100, to=50, length.out = 11)),
   nombre="Patricia",
-  domicilio="Calle Mayor, Madrid",
+  domicilio=paste("Calle", sample(calles, size, replace=T), sample(1:100, size, replace=T), "Madrid"),
   email="aschinchon@gmail.com"
 ) %>% rbind(meta) -> meta
 
 data.frame(
   date=Sys.time() %>% as.character,
-  estad=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  bibli=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  parki=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  comid=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  aulas=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  depor=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  profe=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  segur=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  extra=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  resid=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  satis=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
-  recom=sample(x=0:10, size, replace=TRUE, prob=seq(from=10, to=100, length.out = 11)),
+  estad=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
+  bibli=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
+  parki=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
+  comid=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
+  aulas=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
+  depor=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
+  profe=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
+  segur=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
+  extra=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
+  resid=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
+  satis=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
+  recom=sample(x=0:10, size, replace=TRUE, prob=seq(from=50, to=100, length.out = 11)),
   nombre="Antonio",
-  domicilio="Calle Mayor, Madrid",
+  domicilio=paste("Calle", sample(calles, size, replace=T), sample(1:100, size, replace=T), "Madrid"),
   email="aschinchon@gmail.com"
 ) %>% rbind(meta) -> meta
 
@@ -212,7 +213,6 @@ meta %>%
   mutate(nps=ifelse(nps=="Promotor", 1, 0)) %>% 
   rpart(nps~estad+bibli+parki+comid+aulas+depor+profe+
             segur+extra+resid+satis, data=.)->tree
-plot(tree, main="Classification Tree Promotores/Detractores")
 
 save.image("resultados.Rdata")
 
